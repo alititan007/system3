@@ -33,6 +33,15 @@ class MainActivity : ComponentActivity() {
 }
 @Composable
 fun myNavigation() {
-    
+    val navController = rememberNavController()
+    NavHost(navController = navController, startDestination = Home.Route ){
+        composable(Home.Route){
+            Home(navController)
+        }
+        composable(Second.Route){
+            Second()
+        }
+    }
 
 }
+
